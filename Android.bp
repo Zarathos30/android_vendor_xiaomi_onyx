@@ -13692,6 +13692,42 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libcom.xiaomi.ionutils",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libcom.xiaomi.ionutils.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libcutils",
+                "liblog",
+                "libsync",
+                "libhidlbase",
+                "libhidltransport",
+                "libui",
+                "libcamera_metadata",
+                "libutils",
+                "libdmabufheap",
+                "libnativewindow",
+                "libprocessgroup",
+                "libcom.xiaomi.debug",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcom.xiaomi.mawutils",
     owner: "xiaomi",
     strip: {
@@ -37688,6 +37724,7 @@ cc_prebuilt_library_shared {
                 "libGLESv2",
                 "libnativewindow",
                 "libminikin.xiaomi",
+                "libcom.xiaomi.ionutils",
                 "libMiPhotoFilter",
                 "libc++",
                 "libc",
@@ -41188,30 +41225,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "HotwordEnrollmentXGoogleHEXAGON_WIDEBAND",
-    owner: "xiaomi",
-    apk: "proprietary/product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    product_specific: true,
-}
-
-android_app_import {
-    name: "HotwordEnrollmentYGoogleHEXAGON_WIDEBAND",
-    owner: "xiaomi",
-    apk: "proprietary/product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    privileged: true,
-    product_specific: true,
-}
-
-android_app_import {
     name: "AtFwd2",
     owner: "xiaomi",
     apk: "proprietary/system_ext/app/AtFwd2/AtFwd2.apk",
@@ -41362,15 +41375,6 @@ dex_import {
         "proprietary/product/framework/uimservicelibrary.jar",
     ],
     product_specific: true,
-}
-
-dex_import {
-    name: "com.android.hotwordenrollment.common.util",
-    owner: "xiaomi",
-    jars: [
-        "proprietary/system_ext/framework/com.android.hotwordenrollment.common.util.jar",
-    ],
-    system_ext_specific: true,
 }
 
 dex_import {
@@ -43520,31 +43524,6 @@ sh_binary {
     owner: "xiaomi",
     src: "proprietary/vendor/bin/init.qti.write.sh",
     filename: "init.qti.write.sh",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "irsc_util",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/irsc_util",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
     soc_specific: true,
 }
 
