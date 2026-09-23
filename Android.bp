@@ -20493,6 +20493,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libproj_qmot_tracker.so",
             ],
             shared_libs: [
+                "libc++_shared",
                 "libopencv_core",
                 "libopencv_imgproc",
                 "libbitmlenginev2",
@@ -20522,6 +20523,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libproj_sot.so",
             ],
             shared_libs: [
+                "libc++_shared",
                 "libproj_qmot_tracker",
                 "libfastcvopt",
                 "libopencv_core",
