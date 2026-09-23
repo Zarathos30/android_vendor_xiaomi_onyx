@@ -33,3 +33,35 @@ AB_OTA_PARTITIONS += \
     xbl \
     xbl_config \
     xbl_ramdump
+
+AB_OTA_RADIO_PARTITIONS += \
+    abl \
+    aop \
+    aop_config \
+    bluetooth \
+    countrycode \
+    cpucp \
+    cpucp_dtb \
+    devcfg \
+    dsp \
+    featenabler \
+    hyp \
+    idmanager \
+    imagefv \
+    keymaster \
+    modem \
+    modemfirmware \
+    multiimgqti \
+    pvmfw \
+    qupfw \
+    shrm \
+    soccp_dcd \
+    soccp_debug \
+    spuservice \
+    tz \
+    uefi \
+    uefisecapp \
+    vm-bootsys \
+    xbl \
+    xbl_config \
+    xbl_ramdump
